@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cmr-formation?useSSL=false</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cmr-formation?useSSL=false&amp;createDatabaseIfNotExist=true</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">baddiroot</property>
         <property name="hibernate.default_schema">cmr-formation</property>
@@ -13,6 +13,6 @@
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <mapping resource="com/example/model/Personne.hbm.xml" />
+        <mapping class="com.example.model.Personne" />
     </session-factory>
 </hibernate-configuration>
