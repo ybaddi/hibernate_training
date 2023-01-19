@@ -11,7 +11,8 @@
         <property name="hibernate.default_schema">cmr-formation</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2dll.auto">create-drop</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <mapping resource="com/example/model/Personne.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
