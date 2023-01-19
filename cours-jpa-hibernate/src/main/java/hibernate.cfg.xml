@@ -10,6 +10,7 @@
         <property name="hibernate.connection.password">baddiroot</property>
         <property name="hibernate.default_schema">cmr-formation</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2dll.auto">create-drop</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
     </session-factory>
