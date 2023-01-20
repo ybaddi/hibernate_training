@@ -1,6 +1,12 @@
 package com.example.model;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CurrentTimestamp;
 import org.hibernate.annotations.Formula;
+import org.hibernate.tuple.GenerationTiming;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +23,12 @@ public class Account {
 	private Double credit;
 	
 	private Double rate;
+	
+	@CurrentTimestamp(timing = GenerationTiming.INSERT)
+	private LocalDateTime createdat;
+	
+	@CurrentTimestamp(timing = GenerationTiming.ALWAYS)
+	private LocalDateTime updatedat;
 	
 	@Formula(value="credit * rate")
 	private Double interest;
@@ -64,11 +76,31 @@ public class Account {
 	public void setInterest(Double interest) {
 		this.interest = interest;
 	}
+	
+	
+
+	public LocalDateTime getCreatedat() {
+		return createdat;
+	}
+
+	public void setCreatedat(LocalDateTime createdat) {
+		this.createdat = createdat;
+	}
+
+	public LocalDateTime getUpdatedat() {
+		return updatedat;
+	}
+
+	public void setUpdatedat(LocalDateTime updatedat) {
+		this.updatedat = updatedat;
+	}
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", credit=" + credit + ", rate=" + rate + ", interest=" + interest + "]";
+		return "Account [id=" + id + ", credit=" + credit + ", rate=" + rate + ", createdat=" + createdat
+				+ ", updatedat=" + updatedat + ", interest=" + interest + "]";
 	}
+
 	
 	
 
